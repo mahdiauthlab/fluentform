@@ -5,7 +5,7 @@
                 <h2>Slack Integration</h2>
             </el-col>
             <el-col :md="12" class="action-buttons clearfix mb15">
-                <el-button class="pull-right" size="medium" type="success" icon="el-icon-success" @click="save" :loading="saving"
+                <el-button class="pull-right" size="small" type="primary" icon="el-icon-success" @click="save" :loading="saving"
                 >{{ saving ? 'Saving': 'Save'}} Settings
                 </el-button>
             </el-col>
@@ -41,7 +41,7 @@
         </transition>
 
         <el-form-item>
-            <el-button class="pull-right" size="medium" type="success" icon="el-icon-success" @click="save" :loading="saving">
+            <el-button class="pull-right" size="medium" type="primary" icon="el-icon-success" @click="save" :loading="saving">
                 {{ saving ? 'Saving': 'Save'}} Settings
             </el-button>
         </el-form-item>

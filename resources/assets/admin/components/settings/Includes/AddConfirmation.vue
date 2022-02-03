@@ -19,12 +19,13 @@
                 </el-tooltip>
             </template>
 
+          <div class="ff-ratio-group-parent">
             <el-radio v-for="(redirectOption, optionName) in redirectToOptions"
-                      v-model="confirmation.redirectTo" :label="optionName" border :key="optionName"
+                      v-model="confirmation.redirectTo" size="medium" :label="optionName" border :key="optionName"
             >
                 {{ redirectOption }}
             </el-radio>
-
+          </div>
             <error-view field="redirectTo" :errors="errors" />
         </el-form-item>
 
@@ -71,14 +72,15 @@
                         <i class="el-icon-info el-text-info"></i>
                     </el-tooltip>
                 </template>
-
-                <el-radio v-model="confirmation.samePageFormBehavior"
+            <div class="ff-ratio-group-parent">
+                <el-radio v-model="confirmation.samePageFormBehavior" size="medium"
                             label="hide_form" border>Hide Form
                 </el-radio>
 
-                <el-radio v-model="confirmation.samePageFormBehavior"
+                <el-radio v-model="confirmation.samePageFormBehavior" size="medium"
                             label="reset_form" border>Reset Form
                 </el-radio>
+            </div>
             </el-form-item>
         </div>
 
@@ -103,7 +105,7 @@
                 </el-tooltip>
             </template>
 
-            <el-select v-model="confirmation.customPage" filterable placeholder="Select">
+            <el-select v-model="confirmation.customPage" size="medium" filterable placeholder="Select">
                 <el-option
                     v-for="page in pages"
                     :key="page.ID"

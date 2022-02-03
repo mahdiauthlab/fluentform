@@ -27,20 +27,19 @@
         <transition name="slide-down">
             <div v-if="form.limitNumberOfEntries.enabled" class="conditional-items">
                 <el-form-item label="Maximum Entries">
-                    <el-col :md="6">
-                        <el-input-number :min="0"
-                                         v-model="form.limitNumberOfEntries.numberOfEntries"
-                        ></el-input-number>
-                    </el-col>
-
-                    <el-col :md="12">
-                        <span>/</span>
-                        <el-select style="min-width: 300px" v-model="form.limitNumberOfEntries.period">
-                            <el-option v-for="(label, period) in entryPeriodOptions" :key="period"
-                                       :label="label" :value="period"
-                            ></el-option>
-                        </el-select>
-                    </el-col>
+                  <div class="ff-flex-group-parent">
+                    <el-input-number :min="0"
+                                     v-model="form.limitNumberOfEntries.numberOfEntries"
+                    ></el-input-number>
+                    <div class="">
+                      <span>/</span>
+                      <el-select style="min-width: 300px" v-model="form.limitNumberOfEntries.period">
+                        <el-option v-for="(label, period) in entryPeriodOptions" :key="period"
+                                   :label="label" :value="period"
+                        ></el-option>
+                      </el-select>
+                    </div>
+                  </div>
                 </el-form-item>
 
                 <el-form-item class="label-lh-1-5" label="Message Shown on Reaching Max. Entries" key="limit-reached-msg">

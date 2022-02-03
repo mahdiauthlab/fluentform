@@ -748,3 +748,12 @@ ul.fcc_inline_social {
         cursor: pointer;
     }
 }
+div.ff-ratio-group-parent , div.ff-flex-group-parent {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+
+    .el-radio.is-bordered+.el-radio.is-bordered{
+        margin-left: 0;
+    }
+}

@@ -55,7 +55,7 @@
             btnType: {
                 type: String,
                 default() {
-                    return 'success';
+                    return 'primary';
                 }
             }
         },

@@ -12,7 +12,7 @@
                             :loading="loading"
                             class="pull-right"
                             size="small"
-                            type="success"
+                            type="primary"
                             icon="el-icon-success"
                             @click="saveSettings">
                             {{loading ? 'Saving' : 'Save'}} Settings
@@ -203,12 +203,13 @@
                                 <i class="el-icon-info el-text-info"></i>
                             </el-tooltip>
                         </template>
-
+                    <div class="ff-ratio-group-parent">
                         <el-radio v-for="(labelOption, optionName) in labelPlacementOptions"
                                   v-model="formSettings.layout.labelPlacement" :label="optionName"
-                                  :key="optionName" border>
+                                  :key="optionName" size="medium" border>
                             {{ labelOption }}
                         </el-radio>
+                    </div>
                     </el-form-item>
 
                     <!--Help Message placement-->
@@ -231,10 +232,13 @@
                             </el-tooltip>
                         </template>
 
+                      <div class="ff-ratio-group-parent">
                         <el-radio v-for="(option, optionName) in helpMessagePlacementOptions"
                                   v-model="formSettings.layout.helpMessagePlacement" :label="optionName"
-                                  :key="optionName" border> {{ option }}
+                                  :key="optionName" size="medium" border> {{ option }}
                         </el-radio>
+                      </div>
+
                     </el-form-item>
 
                     <!--Error Message placement-->
@@ -256,11 +260,12 @@
                                 <i class="el-icon-info el-text-info"></i>
                             </el-tooltip>
                         </template>
-
+                    <div class="ff-ratio-group-parent">
                         <el-radio v-for="(option, optionName) in errorMessagesPlacement"
-                                  v-model="formSettings.layout.errorMessagePlacement" :label="optionName"
+                                  v-model="formSettings.layout.errorMessagePlacement" :label="optionName" size="medium"
                                   :key="optionName" border>{{ option }}
                         </el-radio>
+                    </div>
                     </el-form-item>
 
                     <!--Required asterisk mark position -->
@@ -280,11 +285,12 @@
                                 <i class="el-icon-info el-text-info"></i>
                             </el-tooltip>
                         </template>
-
+                        <div class="ff-ratio-group-parent">
                         <el-radio v-for="(option, optionName) in asteriskPlacementMock"
-                                  v-model="formSettings.layout.asteriskPlacement" :label="optionName"
+                                  v-model="formSettings.layout.asteriskPlacement" :label="optionName" size="medium"
                                   :key="optionName" border>{{ option }}
                         </el-radio>
+                        </div>
                     </el-form-item>
                 </el-form>
             </div>
@@ -440,7 +446,7 @@
                     :loading="loading"
                     class="pull-right"
                     size="medium"
-                    type="success"
+                    type="primary"
                     icon="el-icon-success"
                     @click="saveSettings">
                     {{loading ? 'Saving' : 'Save'}} Settings

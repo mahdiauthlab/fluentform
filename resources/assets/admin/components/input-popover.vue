@@ -25,8 +25,8 @@
         <el-input :rows="rows" :placeholder="placeholder" type="textarea" v-model="model"></el-input>
     </div>
 
-    <el-input :placeholder="placeholder" v-else v-model="model" :type="fieldType">
-        <el-button slot="append" :icon="icon" v-popover:input-popover></el-button>
+    <el-input :placeholder="placeholder" v-else v-model="model" size="medium" :type="fieldType">
+        <el-button slot="append" size="medium" :icon="icon" v-popover:input-popover></el-button>
     </el-input>
 </div>
 </template>

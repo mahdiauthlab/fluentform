@@ -259,7 +259,6 @@ new Vue({
                         title: "Success",
                         message: response.message,
                         type: "success",
-                        position: "bottom-right"
                     });
                     this.form_saving = false;
                     FluentFormApp.isDirty = false;
