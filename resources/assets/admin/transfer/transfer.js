@@ -35,7 +35,9 @@ Vue.use(Tabs);
 Vue.use(TabPane);
 
 
-Vue.prototype.$notify = Notification;
+// register Message and Notification with global default options
+FluentFormsGlobal.RegisterNotificationAndMessage(Vue);
+
 Vue.use(Loading.directive);
 Vue.prototype.$loading = Loading.service;
 

@@ -23,8 +23,9 @@ import {
 
 Vue.use(Loading.directive);
 Vue.prototype.$loading = Loading.service;
-Vue.prototype.$message = Message;
-Vue.prototype.$notify = Notification;
+
+// register Message and Notification with global default options
+FluentFormsGlobal.RegisterNotificationAndMessage(Vue);
 
 
 Vue.use(Button);

@@ -78,8 +78,9 @@ Vue.use(InputNumber);
 
 Vue.use(Loading.directive);
 Vue.prototype.$loading = Loading.service;
-Vue.prototype.$notify = Notification;
-Vue.prototype.$message = Message;
+
+// register Message and Notification with global default options
+FluentFormsGlobal.RegisterNotificationAndMessage(Vue);
 
 // configure language
 locale.use(lang);

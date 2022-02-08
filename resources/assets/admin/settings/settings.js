@@ -52,7 +52,10 @@ Vue.use(ColorPicker);
 Vue.use(RadioGroup);
 Vue.use(Radio);
 Vue.use(Dialog);
-Vue.prototype.$notify = Notification;
+
+// register Message and Notification with global default options
+FluentFormsGlobal.RegisterNotificationAndMessage(Vue);
+
 Vue.prototype.$loading = Loading.service;
 
 new Vue({

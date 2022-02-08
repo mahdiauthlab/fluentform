@@ -88,8 +88,9 @@ Vue.use(TabPane);
 
 Vue.use(Loading.directive);
 
-Vue.prototype.$message = Message;
-Vue.prototype.$notify = Notification;
+// register Message and Notification with predefine default options
+FluentFormsGlobal.RegisterNotificationAndMessage(Vue);
+
 Vue.prototype.$loading = Loading.service;
 Vue.prototype.$confirm = MessageBox.confirm;
 
