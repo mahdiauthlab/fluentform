@@ -179,7 +179,6 @@ export default {
                     optionToRender.push({
                         id: i++,
                         value: key,
-                        label: key.replaceAll('_', ' ').ucWords()
                     });
                 }
                 this.editItem.settings.field_order = optionToRender;
