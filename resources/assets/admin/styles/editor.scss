@@ -982,3 +982,12 @@ ul.ff_bulk_option_groups {
     color: gray;
   }
 }
+
+.dragable-address-fields{
+  div.vddl-nodrag{
+    align-items: flex-start;
+  }
+  .handle{
+    height: 24px;
+  }
+}
