@@ -633,7 +633,7 @@
 
                 FluentFormsGlobal.$post(data)
                     .then(response => {
-                        this.$notify({
+                        this.$notify.success({
                             title: 'Success',
                             message: response.data.message,
                             type: 'success',

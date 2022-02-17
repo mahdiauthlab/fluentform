@@ -84,8 +84,10 @@
                         </ul>
                     </div>
                 </div>
+              <div class="ff-flex-group-parent">
                 <el-button @click="printReport()" size="mini" type="info">Print this report</el-button>
                 <el-button @click="resetAnalytics()" size="mini" type="info">Reset Form Analytics</el-button>
+              </div>
             </el-col>
         </el-row>
     </div>

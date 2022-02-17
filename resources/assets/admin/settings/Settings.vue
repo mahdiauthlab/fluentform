@@ -16,7 +16,7 @@
                 </h2>
             </el-col>
             <el-col :md="6" class="action-buttons clearfix mb15">
-                <el-button size="medium" class="pull-right" type="success" icon="el-icon-success" @click="save"
+                <el-button size="medium" class="pull-right" type="primary" icon="el-icon-success" @click="save"
                 >Save Settings
                 </el-button>
             </el-col>
@@ -32,7 +32,7 @@
         <!--Save settings-->
         <el-row>
             <el-col class="action-buttons clearfix mb15">
-                <el-button size="medium" class="pull-right" type="success" icon="el-icon-success" @click="save"
+                <el-button size="medium" class="pull-right" type="primary" icon="el-icon-success" @click="save"
                 >Save Settings
                 </el-button>
             </el-col>

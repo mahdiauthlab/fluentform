@@ -408,7 +408,7 @@ export default {
         (new Clipboard('.copy')).on('success', event => {
             this.$message({
                 message: 'Copied to Clipboard!',
-                type: 'success'
+                type: 'success',
             });
         });
     },

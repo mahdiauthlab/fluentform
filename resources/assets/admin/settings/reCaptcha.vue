@@ -104,7 +104,7 @@
                     </el-button>
 
                     <el-button
-                        type="success"
+                        type="primary"
                         icon="el-icon-success"
                         size="medium"
                         @click="save"

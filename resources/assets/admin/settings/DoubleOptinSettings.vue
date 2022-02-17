@@ -17,7 +17,7 @@
                 </h2>
             </el-col>
             <el-col :md="6" class="action-buttons clearfix mb15">
-                <el-button v-loading="saving" size="medium" class="pull-right" type="success" icon="el-icon-success" @click="save"
+                <el-button v-loading="saving" size="medium" class="pull-right" type="primary" icon="el-icon-success" @click="save"
                 >Save Settings
                 </el-button>
             </el-col>

@@ -756,4 +756,7 @@ div.ff-ratio-group-parent , div.ff-flex-group-parent {
     .el-radio.is-bordered+.el-radio.is-bordered{
         margin-left: 0;
     }
+    button.el-button+button.el-button{
+        margin-left: 0;
+    }
 }

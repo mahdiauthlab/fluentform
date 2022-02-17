@@ -21,7 +21,7 @@
                     <el-button @click="closeModel()" size="small" type="info">
                         Cancel
                     </el-button>
-                    <el-button v-loading="saving" @click="updateEntry()" size="small" type="success">
+                    <el-button v-loading="saving" @click="updateEntry()" size="small" type="primary">
                         Update Entry
                     </el-button>
                 </span>

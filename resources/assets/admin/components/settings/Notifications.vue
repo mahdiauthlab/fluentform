@@ -429,7 +429,7 @@
                     :loading="loading"
                     @click="store"
                     size="medium"
-                    type="success"
+                    type="primary"
                     icon="el-icon-success">
                     {{ loading ? 'Saving' : 'Save' }} Notification
                 </el-button>

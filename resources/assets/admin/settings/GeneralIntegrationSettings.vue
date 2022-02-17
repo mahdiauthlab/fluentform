@@ -67,7 +67,7 @@
                 <!--Validate Keys-->
 
                 <el-form-item>
-                    <el-button v-loading="saving" type="success" icon="el-icon-success" size="medium" @click="save">
+                    <el-button v-loading="saving" type="primary" icon="el-icon-success" size="medium" @click="save">
                         {{ settings.save_button_text }}
                     </el-button>
                 </el-form-item>

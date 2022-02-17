@@ -18,7 +18,7 @@
                         :placeholder="$t('Please Provide Note Content')"
                         v-model="new_note.content">
                     </el-input>
-                    <el-button :loading="isAddingNote" @click="addNewNote()" size="small" type="success">Submit Note</el-button>
+                    <el-button :loading="isAddingNote" @click="addNewNote()" size="small" type="primary">Submit Note</el-button>
                 </div>
                 <template v-if="notes && notes.length">
                     <div v-for="activity in showingNotes" :key="activity.id"
