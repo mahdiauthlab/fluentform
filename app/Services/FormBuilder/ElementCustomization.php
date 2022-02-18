@@ -181,6 +181,15 @@ $element_customization_settings = array(
             ),
         ),
     ),
+    'upload_in_media_library' => array(
+        'template' => 'inputCheckbox',
+        'options' => array(
+            array(
+                'value' => false,
+                'label' => __('Upload In Media Library', 'fluentform'),
+            ),
+        ),
+    ),
     'html_codes' => array(
         'template' => 'inputHTML',
         'rows' => 4,
