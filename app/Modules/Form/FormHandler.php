@@ -110,6 +110,15 @@ class FormHandler
 
         $insertId = wpFluent()->table('fluentform_submissions')->insert($insertData);
 
+        foreach ($fields as $field){
+            if ( ($field['element'] === 'input_file' || $field['element'] === 'input_image') &&
+                isset($field['raw']['settings']['upload_in_media_library']) &&
+                $field['raw']['settings']['upload_in_media_library']
+            ){
+                do_action('fluentform_file_upload_on_media_library', $data, $field);
+            }
+        }
+
         $uidHash = md5(wp_generate_uuid4() . $insertId);
         Helper::setSubmissionMeta($insertId, '_entry_uid_hash', $uidHash, $formId);
 
