@@ -115,7 +115,7 @@ class FormHandler
                 isset($field['raw']['settings']['upload_in_media_library']) &&
                 $field['raw']['settings']['upload_in_media_library']
             ){
-                do_action('fluentform_file_upload_on_media_library', $data, $field);
+                do_action('fluentform_file_upload_on_media_library', $this->formData, $field);
             }
         }
 
