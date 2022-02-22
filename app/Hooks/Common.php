@@ -357,6 +357,39 @@ add_action('ff_integration_action_result', function ($feed, $status, $note = '')
         ]);
 }, 10, 3);
 
+// upload file in medial library
+add_action('fluentform_file_upload_on_media_library', function ($data , $field){
+    $files = $data[$field['raw']['attributes']['name']];
+    if ($files) {
+        foreach ($files as $file_url) {
+            $upload_dir = wp_upload_dir();
+            $file_data = file_get_contents( $file_url );
+            $filename = basename( $file_url );
+
+            if ( wp_mkdir_p( $upload_dir['path'] ) ) {
+                $file = $upload_dir['path'] . '/' . $filename;
+            }
+            else {
+                $file = $upload_dir['basedir'] . '/' . $filename;
+            }
+
+            file_put_contents( $file, $file_data );
+            $wp_filetype = wp_check_filetype( $filename, null );
+            $attachment = array(
+                'post_mime_type' => $wp_filetype['type'],
+                'post_title' => sanitize_file_name( $filename ),
+                'post_content' => '',
+                'post_status' => 'inherit'
+            );
+
+            $attach_id = wp_insert_attachment( $attachment, $file );
+            require_once( ABSPATH . 'wp-admin/includes/image.php' );
+            $attach_data = wp_generate_attachment_metadata( $attach_id, $file );
+            wp_update_attachment_metadata( $attach_id, $attach_data );
+        }
+    }
+}, 10, 3);
+
 add_action('fluentform_global_notify_completed', function ($insertId, $form) use ($app) {
     if (strpos($form->form_fields, '"element":"input_password"') && apply_filters('fluentform_truncate_password_values', true, $form)) {
         // we have password
