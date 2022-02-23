@@ -3,11 +3,12 @@
     <elLabel slot="label" :label="item.settings.label"></elLabel>
     <div class="repeat-field--item">
         <el-form-item v-for="field, key, i in item.fields" :key="i" :class="{ 'is-required' : field.settings.validation_rules.required.value }">
-            <elLabel v-if="isMultiCol" slot="label" :label="field.settings.label"></elLabel>
-            <el-input v-if="field.element != 'select'" :value="field.attributes.value" :placeholder="field.attributes.placeholder"></el-input>
-            <div v-else>
+            <elLabel v-if="isMultiCol && field.element != 'input_image'" slot="label" :label="field.settings.label"></elLabel>
+            <input-file v-if="field.element == 'input_image'" :item="field"></input-file>
+            <div v-else-if="field.element == 'select'">
                 <el-select :placeholder="field.attributes.placeholder"></el-select>
             </div>
+            <el-input v-else :value="field.attributes.value" :placeholder="field.attributes.placeholder"></el-input>
         </el-form-item>
     </div>
     <div :class="{'repeat-field-actions': isMultiCol }">
@@ -19,12 +20,14 @@
 
 <script>
 import elLabel from '../includes/el-label.vue'
+import inputFile from "./inputFile";
 
 export default {
     name: 'repeat_fields',
     props: ['item'],
     components: {
-        elLabel
+        elLabel,
+      inputFile
     },
     computed: {
         firstField() {

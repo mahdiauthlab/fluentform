@@ -58,13 +58,15 @@
                     'input_text': 'Text Field',
                     'input_email': 'Email Field',
                     'input_number': 'Numeric Field',
-                    'select': 'Select Field'
+                    'select': 'Select Field',
+                    'input_image' : 'Upload Image'
                 },
                 elementMaps: {
                     input_text: 'text',
                     input_email: 'email',
                     input_number: 'number',
-                    select: 'select'
+                    select: 'select',
+                    input_image:'file'
                 },
                 inputChildFields: ['label', 'value', 'placeholder'],
                 selectChildFields: ['label', 'placeholder', 'advanced_options']
@@ -116,6 +118,30 @@
                             value: 'Option 2'
                         }
                     ];
+                }
+
+                if(element == 'input_image'){
+                    item.attributes = {...item.attributes, accept:'image/*', class:"", name:'file-upload' };
+
+                    let validation_rules = {
+                      ...item.settings.validation_rules,
+                      allowed_image_types:{
+                        message:"Allowed image types does not match",
+                        value:[]
+                      },
+                      max_file_count : {
+                        message:"You can upload maximum 1 image",
+                        value : 1
+                      },
+                      max_file_size:{
+                        message:"Maximum file size limit is 1MB",
+                        _valueFrom:'MB',
+                        value: 1048576
+                      },
+                    }
+
+                    item.settings = {...item.settings, admin_field_label:"", btn_text:"Upload Image", conditional_logics:[], container_class:'', label: 'Image Upload' , label_placement:'', validation_rules };
+                    item.editor_options = {...item.editor_options, template:'inputFile', titel:"Image Upload", icon_class:"ff-edit-images"}
                 }
 
                 return item;
