@@ -140,6 +140,8 @@ foreach ($elements as $element) {
 }
 
 $app->addFilter('fluentform_response_render_textarea', function ($value, $field, $formId, $isHtml) {
+    $value = $value ? nl2br($value) : $value;
+
     if (!$isHtml || !$value) {
         return $value;
     }
