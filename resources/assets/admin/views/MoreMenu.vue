@@ -2,7 +2,10 @@
     <div :class="{ ff_backdrop: visible }">
         <el-dropdown v-if="!is_conversion_form" @command="handle">
             <span class="el-dropdown-link">
-                <i class="el-icon-s-operation"></i>
+                <i 
+                    class="el-icon-more" 
+                    style="cursor: pointer; transform: rotate(90deg);font-size: 20px;margin-top: 2px;"
+                />
             </span>
 
             <el-dropdown-menu slot="dropdown">
