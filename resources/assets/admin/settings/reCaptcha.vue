@@ -85,13 +85,12 @@
                 </el-form-item>
 
                 <!--Validate Keys-->
-                <el-form-item 
-                    label="Validate Keys"
-                    v-if="siteKeyChanged"
-                    :class="hidden"
-                >
-                    <div 
-                        class="g-recaptcha" 
+                <el-form-item :class="hidden">
+                    <template slot="label" v-if="v2">
+                        Validate Keys
+                    </template>
+
+                    <div
                         id="reCaptcha" 
                         :data-sitekey="reCaptcha.siteKey"
                         :data-size="size"
@@ -146,12 +145,16 @@ export default {
     },
 
     computed: {
+        v2() {
+            return this.reCaptcha.api_version === 'v2_visible';
+        },
+
         size() {
-            return this.reCaptcha.api_version === 'v2_visible' ? 'normal' : 'invisible';
+            return this.v2 ? 'normal' : 'invisible';
         },
 
         hidden() {
-            return this.reCaptcha.api_version === 'v2_visible' ? '' : 'hidden';
+            return this.v2 ? '' : 'mb0';
         }
     },
 
