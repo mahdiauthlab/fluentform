@@ -24,16 +24,14 @@
 
             <p>
                 Conversational Forms currently doesn't support the following
-                fields.
+                fields:
             </p>
 
-            <p>
-                Name Fields, Address Fields, Section Break, hCaptcha,
-                Shortcode, Action Hook, Form Step, GDPR Agreement, Custom Submit
-                Button, Range Slider Field, Net Promoter Score, Chained Select
-                Field, Color Picker Field, Repeat Field, POST/CPT Selection,
-                Containers.
-            </p>
+            <el-row :gutter="20">
+                <el-col :span="8" v-for="(field, i) in fields" :key="i">
+                    <i class="el-icon-caret-right"></i> {{ field }}
+                </el-col>
+            </el-row>
 
             <p>
                 You may also lose data of these fields.
@@ -59,7 +57,25 @@ export default {
     data() {
         return {
             form_id: window.FluentFormApp.form_id,
-            visible: false
+            visible: false,
+            fields: [
+                "Name Fields",
+                "Address Fields",
+                "Section Break",
+                "hCaptcha",
+                "Shortcode",
+                "Action Hook",
+                "Form Step",
+                "GDPR Agreement",
+                "Custom Submit Button",
+                "Range Slider Field",
+                "Net Promoter Score",
+                "Chained Select Field",
+                "Color Picker Field",
+                "Repeat Field",
+                "POST/CPT Selection",
+                "Containers"
+            ]
         };
     },
 
