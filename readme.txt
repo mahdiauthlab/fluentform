@@ -4,7 +4,7 @@ Tags: contact form, contact forms, wp forms, forms, form builder, contact form b
 Requires at least: 4.5
 Tested up to: 5.9
 Requires PHP: 5.6
-Stable tag: 4.3.2
+Stable tag: 4.3.3
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -358,6 +358,9 @@ The entire source code is <a href="https://github.com/fluentform/fluentform">ava
 12. Asset Loading Comparison with Other Plugins
 
 == Changelog ==
+
+= 4.3.3 (Date: Feb 25, 2022) =
+- Fixes multiple calculated custom payment issue
 
 = 4.3.2 (Date: Feb 24, 2022) =
 - Adds address field inputs reordering option
