@@ -541,6 +541,41 @@ $element_customization_settings = array(
         'label' => __('Validate as Unique', 'fluentform'),
         'help_text' => __('If you make it unique then it will validate as unique from previous submissions of this form', 'fluentform')
     ),
+    'show_as_reveal_text' => array(
+        'template' => 'radioConditionFields',
+        'label' => __('Show Html Field As Reveal Text', 'fluentform'),
+        'help_text' => __('If you make it yes then this custom html field will work like reveal (read more) text field.', 'fluentform'),
+        'options' => array(
+            array(
+                'value' => true,
+                'label' => __('Yes', 'fluentform'),
+            ),
+            array(
+                'value' => false,
+                'label' => __('No', 'fluentform'),
+            ),
+        ),
+        'fields' => array(
+            array(
+                'key' => 'readmore_button_text',
+                'type' => 'text',
+                'label' => __('Read More Button Text','fluentform'),
+                'help_text' => __('Value text will be shown as read more button text value','fluentform'),
+            ),
+            array(
+                'key' => 'readless_button_text',
+                'type' => 'text',
+                'label' => __('Read Less Button Text','fluentform'),
+                'help_text' => __('Value text will be shown as read less button text value','fluentfomr'),
+            ),
+             array(
+                'key' => 'show_count_length',
+                'type' => 'number',
+                'label' => __('Show Text Length','fluentfomr'),
+                'help_text' => __('The number of charecter length are showed.', 'fluentfomr'),
+            ),
+        )
+    ),
     'show_text' => array(
         'template' => 'select',
         'label' => __('Show Text', 'fluentform'),

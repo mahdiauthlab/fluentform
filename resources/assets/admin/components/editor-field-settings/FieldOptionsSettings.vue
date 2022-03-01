@@ -112,6 +112,7 @@ import targetProduct from './templates/targetProduct.vue';
 import inputYesNoCheckBox from "./templates/inputYesNoCheckbox";
 import fieldsRepeatSettings from "./templates/fieldsRepeatSettings";
 import ConversionStylePref from "../../conversion_templates/ConversionStylePref";
+import radioConditionFields from './templates/radioConditionFields.vue';
 
 export default {
     name: 'FieldOptionsSettings',
@@ -158,6 +159,7 @@ export default {
         ff_paymentMethodsConfig: paymentMethodsConfig,
         ff_targetProduct: targetProduct,
         ff_inputYesNoCheckBox: inputYesNoCheckBox,
+        ff_radioConditionFields : radioConditionFields,
         ff_fieldsRepeatSettings: fieldsRepeatSettings,
         ConversionStylePref
     },

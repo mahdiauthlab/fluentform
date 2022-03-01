@@ -945,7 +945,11 @@ $defaultElements = array(
             'settings' => array(
                 'html_codes' => '<p>Some description about this section</p>',
                 'conditional_logics' => array(),
-                'container_class' => ''
+                'container_class' => '',
+                'readmore_button_text' => 'Read More',
+                'readless_button_text' => 'Read Less',
+                'show_count_length' => 50,
+                'show_as_reveal_text' => false
             ),
             'editor_options' => array(
                 'title' => __('Custom HTML', 'fluentform'),

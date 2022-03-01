@@ -341,6 +341,7 @@ return array(
     'custom_html' => array(
         'general' => array(
             'html_codes',
+            'show_as_reveal_text',
             'conditional_logics',
             'container_class'
         ),
