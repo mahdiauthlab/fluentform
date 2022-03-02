@@ -226,7 +226,7 @@ export default function ($, $theForm) {
                     return;
                 }
 
-                if (+ prevValue !== + formattedValue) {
+                if (prevValue != formattedValue) {
                     $fieldDom.trigger('change');
                 }
             } else {
