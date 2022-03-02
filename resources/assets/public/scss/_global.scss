@@ -149,6 +149,15 @@
   }
 }
 
+.ff_ {
+  &hide_text {
+    display: none;
+  }
+  &show_text {
+    display: initial;
+  }
+}
+
 ul.ff_coupon_responses {
   margin: 0;
   padding: 0;
