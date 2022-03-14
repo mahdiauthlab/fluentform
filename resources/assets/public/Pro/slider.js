@@ -86,7 +86,7 @@ export default function ($, $theForm, fluentFormVars, formSelector) {
                     };
                     jQuery.getJSON(fluentFormVars.ajaxUrl, data).then(response => {
                         jQuery.each(response, (key, options) => {
-                            let $select = $el.find(`select[data-key=${key}]`);
+                            let $select = $el.find(`select[data-key='${key}']`);
 
                             if ($select.attr('data-index') != 0) {
                                 jQuery.each(options, (k, val) => {
