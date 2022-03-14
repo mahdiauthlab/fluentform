@@ -64,6 +64,12 @@ class ConditionApp {
     }
 
     getItemEvaluateValue(item, val) {
+        const isNumericField = jQuery(`[name=${item.field}]`).attr('inputmode') === 'numeric';
+
+        if (isNumericField) {
+            val = val.replace(/[^0-9.-]/g, '');
+        }
+
         if (item.operator == '=') {
             // this value can be array or string
             if (typeof val == 'object') {
