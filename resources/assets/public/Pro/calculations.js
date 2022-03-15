@@ -66,7 +66,6 @@ export default function ($, $theForm) {
     }
 
     var doCalculation = function () {
-        console.log('calculating');
         jQuery.each(calculationFields, (index, field) => {
             var $field = jQuery(field);
             var formula = $field.data('calculation_formula');
