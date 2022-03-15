@@ -441,11 +441,14 @@ class Component
     public function renderForm($atts)
     {
         $form_id = $atts['id'];
-
+        $query = wpFluent()->table('fluentform_forms');
+        if (!isset($_GET['preview_id'])) {
+            $query->where('status', 'published');
+        }
         if ($form_id) {
-            $form = wpFluent()->table('fluentform_forms')->find($form_id);
-        } else if ($formTitle = $atts['title']) {
-            $form = wpFluent()->table('fluentform_forms')->where('title', $formTitle)->first();
+            $form = $query->find($form_id);
+        } elseif ($formTitle = $atts['title']) {
+            $form = $query->where('title', $formTitle)->first();
         } else {
             return '';
         }
