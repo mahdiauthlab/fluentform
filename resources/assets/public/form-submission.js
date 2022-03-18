@@ -395,7 +395,7 @@ jQuery(document).ready(function () {
 
                 var formResetHandler = function ($this) {
                     if ($('.ff-step-body', $theForm).length) {
-                        fireUpdateSlider(0, fluentFormVars.stepAnimationDuration);
+                        fireUpdateSlider(0, fluentFormVars.stepAnimationDuration, false);
                     }
                     $this.find('.ff-el-repeat .ff-t-cell').each(function () {
                         $(this).find('input').not(':first').remove();
