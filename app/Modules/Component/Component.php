@@ -552,7 +552,7 @@ class Component
                 'loadingText'    => __('Loading...', 'fluentform'),
                 'noChoicesText'  => __('No choices to choose from', 'fluentform'),
                 'itemSelectText' => __('Press to select', 'fluentform'),
-                'maxItemText'    => __('Only %%maxItemCount%% values can be added', 'fluentform'),
+                'maxItemText'    => __('Only %%maxItemCount%% options can be added', 'fluentform'),
             ]
         ));
 
