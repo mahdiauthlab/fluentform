@@ -581,6 +581,8 @@ class Component
             $form_vars['conditionals'] = $conditionals;
         }
 
+        $form_vars = apply_filters('fluentform/form_vars_for_JS', $form_vars, $form);
+
         if ($form->has_payment) {
             do_action('fluentform_rendering_payment_form', $form);
         }
