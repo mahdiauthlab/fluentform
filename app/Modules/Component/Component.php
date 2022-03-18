@@ -900,6 +900,20 @@ class Component
                 <?php if(defined('ELEMENTOR_PRO_VERSION')): ?>
                 jQuery(document).on('elementor/popup/show', function (event, id, instance) {
                     var ffForms = jQuery('#elementor-popup-modal-' + id).find('form.frm-fluent-form');
+
+                    /**
+                     * Support conversation form in elementor popup
+                     * No regular form found, check for conversational form
+                     */
+                    if (!ffForms.length) {
+                        const elements = document.getElementsByClassName('ffc_conv_form');
+                        if (elements.length) {
+                            let jsEvent = new CustomEvent('ff-elm-conv-form-event', {
+                                detail: elements[0]
+                            });
+                            document.dispatchEvent(jsEvent);
+                        }
+                    }
                     if (ffForms.length) {
                         jQuery.each(ffForms, function (index, ffForm) {
                             jQuery(ffForm).trigger('reInitExtras');
