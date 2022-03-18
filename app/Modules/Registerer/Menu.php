@@ -48,9 +48,24 @@ class Menu
 	        true
         );
 
+        $settingsGlobalStyle = $app->publicUrl('css/settings_global.css');
+        $allFormsStyle = $app->publicUrl("css/fluent-all-forms.css");
+        $fluentFormAdminEditorStyles = $app->publicUrl("css/fluent-forms-admin-sass.css");
+        $fluentFormAdminCSS = $app->publicUrl("css/fluent-forms-admin.css");
+        $addOnsCss = $app->publicUrl("css/add-ons.css");
+        $adminDocCss = $app->publicUrl("css/admin_docs.css");
+        if (is_rtl()) {
+            $settingsGlobalStyle = $app->publicUrl('css/settings_global_rtl.css');
+            $allFormsStyle = $app->publicUrl("css/fluent-all-forms-rtl.css");
+            $fluentFormAdminEditorStyles = $app->publicUrl("css/fluent-forms-admin-sass-rtl.css");
+            $fluentFormAdminCSS = $app->publicUrl("css/fluent-forms-admin-rtl.css");
+            $addOnsCss = $app->publicUrl("css/add-ons-rtl.css");
+            $adminDocCss = $app->publicUrl("css/admin_docs_rtl.css");
+        }
+
         wp_register_style(
             'fluentform_settings_global',
-            $app->publicUrl("css/settings_global.css"),
+            $settingsGlobalStyle,
             array(),
             FLUENTFORM_VERSION,
             'all'
@@ -90,7 +105,7 @@ class Menu
 
         wp_register_style(
             'fluent_all_forms',
-            $app->publicUrl("css/fluent-all-forms.css"),
+            $allFormsStyle,
             array(),
             FLUENTFORM_VERSION,
             'all'
@@ -106,7 +121,7 @@ class Menu
 
         wp_register_style(
             'fluentform_editor_style',
-            $app->publicUrl("css/fluent-forms-admin-sass.css"),
+            $fluentFormAdminEditorStyles,
             [],
             FLUENTFORM_VERSION,
             'all'
@@ -114,7 +129,7 @@ class Menu
 
         wp_register_style(
             'fluentform_editor_sass',
-            $app->publicUrl("css/fluent-forms-admin.css"),
+            $fluentFormAdminCSS,
             [],
             FLUENTFORM_VERSION,
             'all'
@@ -162,7 +177,7 @@ class Menu
 
         wp_register_style(
             'fluentform-add-ons',
-            $app->publicUrl('css/add-ons.css'),
+            $addOnsCss,
             [],
             FLUENTFORM_VERSION,
             'all'
@@ -170,7 +185,7 @@ class Menu
 
         wp_register_style(
             'fluentform_doc_style',
-            $app->publicUrl('css/admin_docs.css'),
+            $adminDocCss,
             [],
             FLUENTFORM_VERSION,
             'all'
@@ -180,7 +195,17 @@ class Menu
             return '<span id="footer-thankyou">Thanks for using <a target="_blank" rel="nofollow" href="https://wordpress.org/plugins/fluentform">Fluent Forms</a>.</span>';
         });
 
-        wp_enqueue_style('fluentform_global_elements', $app->publicUrl('css/element-ui-css.css'), [], FLUENTFORM_VERSION, 'all');
+        $elementUIStyle = $app->publicUrl('css/element-ui-css.css');
+        if (is_rtl()) {
+            $elementUIStyle = $app->publicUrl('css/element-ui-css-rtl.css');
+        }
+        wp_enqueue_style(
+            'fluentform_global_elements',
+            $elementUIStyle,
+            [],
+            FLUENTFORM_VERSION,
+            'all'
+        );
     }
 
     public function isFluentPages()
