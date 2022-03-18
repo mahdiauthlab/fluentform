@@ -534,7 +534,7 @@ class Component
 
         $stepText = __('Step %activeStep% of %totalStep% - %stepTitle%', 'fluentform');
         $stepText = apply_filters('fluentform_step_string', $stepText);
-        $vars = apply_filters('fluentform_global_form_vars', array(
+            $vars = apply_filters('fluentform_global_form_vars', array(
             'ajaxUrl'               => admin_url('admin-ajax.php'),
             'forms'                 => array(),
             'step_text'             => $stepText,
@@ -553,6 +553,9 @@ class Component
                 'noChoicesText'  => __('No choices to choose from', 'fluentform'),
                 'itemSelectText' => __('Press to select', 'fluentform'),
                 'maxItemText'    => __('Only %%maxItemCount%% options can be added', 'fluentform'),
+            ],
+            'jquery_mask_vars' => [
+	            'clearIfNotMatch' => false,
             ]
         ));
 
