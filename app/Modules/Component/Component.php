@@ -931,7 +931,7 @@ class Component
         return '';
     }
 
-    private function getDatei18n()
+    public static function getDatei18n()
     {
         $i18n = array(
             'previousMonth'    => __('Previous Month', 'fluentform'),
