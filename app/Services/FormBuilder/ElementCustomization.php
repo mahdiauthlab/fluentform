@@ -114,6 +114,34 @@ $element_customization_settings = array(
         'help_text' => __('Select any date format from the dropdown. The user will be able to choose a date in this given format.', 'fluentform'),
         'options' => $dateFormats,
     ),
+    'column_format' => array(
+        'template' => 'select',
+        'label' => __('Columns Format', 'fluentform'),
+        'placeholder' => __('Columns Format', 'fluentform'),
+        'help_text' => __('Select any column format from the dropdown.', 'fluentform'),
+        'options' => array(
+            array(
+                'value' => 'col-30/70',
+                'label' => __('30/70', 'fluentform'),
+            ),
+            array(
+                'value' => 'col-40/60',
+                'label' => __('40/60', 'fluentform'),
+            ),
+            array(
+                'value' => 'col-50/50',
+                'label' => __('50/50', 'fluentform'),
+            ),
+            array(
+                'value' => 'col-60/40',
+                'label' => __('60/40', 'fluentform'),
+            ),
+            array(
+                'value' => 'col-70/30',
+                'label' => __('70/30', 'fluentform'),
+            )
+        ),
+    ),
     'date_config' => $dateConfigSettings,
     'rows' => array(
         'template' => 'inputText',

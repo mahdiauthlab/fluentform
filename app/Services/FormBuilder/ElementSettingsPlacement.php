@@ -485,6 +485,7 @@ return array(
     ),
     'container' => array(
         'general' => array(
+            'column_format',
             'container_class',
             'conditional_logics'
         ),

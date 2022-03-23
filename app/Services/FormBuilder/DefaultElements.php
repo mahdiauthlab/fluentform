@@ -1268,7 +1268,8 @@ $defaultElements = array(
             'attributes' => array(),
             'settings' => array(
                 'container_class' => '',
-                'conditional_logics' => array()
+                'conditional_logics' => array(),
+                'column_format' => 'col-50/50'
             ),
             'columns' => array(
                 array('fields' => array()),

@@ -46,6 +46,10 @@ class Container extends BaseComponent
             $container_css_class = $container_css_class.' '.strip_tags($containerClass);
         }
 
+        if (!empty($data['settings']['column_format'])) {
+            $container_css_class .= ' ' . $data['settings']['column_format'];
+        }
+
         $atts = $this->buildAttributes(
             \FluentForm\Framework\Helpers\ArrayHelper::except($data['attributes'], 'name')
         );

@@ -204,6 +204,55 @@
 .item-container {
   border: 1px dashed #ffb900;
   display: flex;
+  width: 100%;
+  &.col-30\/70{
+    display: table;
+    .col{
+      display: inline-block;
+      &:first-of-type{
+        width: 30%;
+      }
+      &:last-of-type{
+        width: 70%;
+      }
+    }
+  }
+  &.col-40\/60{
+    display: table;
+    .col{
+      display: inline-block;
+      &:first-of-type{
+        width: 40%;
+      }
+      &:last-of-type{
+        width: 60%;
+      }
+    }
+  }
+  &.col-60\/40{
+    display: table;
+    .col{
+      display: inline-block;
+      &:first-of-type{
+        width: 60%;
+      }
+      &:last-of-type{
+        width: 40%;
+      }
+    }
+  }
+  &.col-70\/30{
+    display: table;
+    .col{
+      display: inline-block;
+      &:first-of-type{
+        width: 70%;
+      }
+      &:last-of-type{
+        width: 30%;
+      }
+    }
+  }
 
   .col {
     box-sizing: border-box;

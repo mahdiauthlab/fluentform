@@ -23,7 +23,7 @@
 
             <i @click.stop="editorInserterPopup(index, wrapper)" class="popup-search-element">+</i>
 
-            <div v-if="item.element == 'container'" class="item-container">
+            <div v-if="item.element == 'container'" class="item-container" :class="item.settings.column_format">
                 <div v-for="containerRow in item.columns" class="col">
                     <vddl-list class="panel__body"
                                :list="containerRow.fields"
