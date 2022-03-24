@@ -1146,6 +1146,22 @@ jQuery(document).ready(function () {
                     }
                 };
 
+                /**
+                 * Validates if number of digits matches
+                 * @param  jQuery Elelemnt el
+                 * @return bool
+                 */
+                 this.digits = function (el, rule) {
+                    var val = window.ff_helper.numericVal(el);
+                    val = val.toString();
+
+                    if (!rule.value || !val.length) {
+                        return true;
+                    }
+
+                    return this.numeric(el, rule) && val.length == rule.value;
+                };
+
                 this.max_file_size = function () {
                     return true;
                 };
