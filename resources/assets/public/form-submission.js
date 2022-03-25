@@ -1012,7 +1012,7 @@ jQuery(document).ready(function () {
                                         self.errors[elName][ruleName] = rule.message;
                                     }
                                 } else {
-                                    throw new Error('Method [' + ruleName + '] doesn\'t exist in Validator.');
+                                    // throw new Error('Method [' + ruleName + '] doesn\'t exist in Validator.');
                                 }
                             });
                         }
