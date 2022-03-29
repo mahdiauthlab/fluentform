@@ -612,6 +612,22 @@ $element_customization_settings = array(
             )
         ),
     ),
+    'upload_target_directory' => array(
+        'template' => 'select',
+        'label' => __('Upload Directory', 'fluentform'),
+        'placeholder' => __('Upload Target Directory', 'fluentform'),
+        'help_text' => __('Select a target directory for where to upload file.', 'fluentform'),
+        'options' => array(
+            array(
+                'value' => '',
+                'label' => __('Fluentform Default', 'fluentform'),
+            ),
+            array(
+                'value' => 'wp-media-library',
+                'label' => __('Wordpress Media Library', 'fluentform'),
+            ),
+        ),
+    ),
 );
 
 

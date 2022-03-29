@@ -264,6 +264,7 @@ return array(
             'label_placement',
             'admin_field_label',
             'validation_rules',
+            'upload_target_directory'
         ),
         'advanced' => array(
             'container_class',
@@ -280,6 +281,7 @@ return array(
             'label_placement',
             'admin_field_label',
             'validation_rules',
+            'upload_target_directory'
         ),
         'advanced' => array(
             'container_class',
