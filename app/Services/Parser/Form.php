@@ -278,6 +278,7 @@ class Form
                 'multi_payment_component',
                 'payment_method',
                 'item_quantity_component',
+                'payment_tax_component',
                 'payment_coupon',
 	            'subscription_payment_component'
             ]);

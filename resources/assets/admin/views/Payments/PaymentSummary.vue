@@ -29,14 +29,20 @@
                         </tr>
                         </tbody>
                         <tfoot>
+                          <tr>
+                            <th colspan="3" class="text-right">{{$t('Sub-Total')}}</th>
+                            <th><span v-html="formatMoney(order_data.order_items_subtotal, submission.currency)"></span></th>
+                          </tr>
                         <template v-if="order_data.discount_items && order_data.discount_items.length">
-                            <tr>
-                                <th colspan="3" class="text-right">{{$t('Sub-Total')}}</th>
-                                <th><span v-html="formatMoney(order_data.order_items_subtotal, submission.currency)"></span></th>
-                            </tr>
                             <tr v-for="(discount, index) in order_data.discount_items" :key="index">
                                 <th colspan="3" class="text-right">{{$t('Discount')}}: {{discount.item_name}}</th>
                                 <th>-<span v-html="formatMoney(discount.line_total, submission.currency)"></span></th>
+                            </tr>
+                        </template>
+                        <template v-if="order_data.tax_items && order_data.tax_items.length">
+                            <tr v-for="(tax, index) in order_data.tax_items" :key="index">
+                                <th colspan="3" class="text-right">{{$t('Tax')}}: {{tax.item_name}}</th>
+                                <th>+<span v-html="formatMoney(tax.line_total, submission.currency)"></span></th>
                             </tr>
                         </template>
                         <tr>
