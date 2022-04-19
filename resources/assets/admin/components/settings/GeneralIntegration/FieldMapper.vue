@@ -149,7 +149,7 @@
                     freshCopy[0].shortcodes = {
                         ...freshCopy[0].shortcodes,
                         '{all_data}': 'All Data',
-                        '{all_data_without_hidden_field}' : 'All Submitted Data without hidden field'
+                        '{all_data_without_hidden_fields}' : 'All Data Without Hidden Fields'
                     };
                 }
                 return freshCopy;
