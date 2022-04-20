@@ -444,3 +444,8 @@ if (function_exists('register_block_type')) {
     ));
 }
 
+
+// require the CLI
+if (defined('WP_CLI') && WP_CLI) {
+    \WP_CLI::add_command('fluentform', '\FluentForm\App\Modules\CLI\Commands');
+}
