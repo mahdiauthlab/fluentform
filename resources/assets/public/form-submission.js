@@ -1271,9 +1271,7 @@ jQuery(document).ready(function () {
                 return false;
             }
             formInstance.reinitExtras();
-            if (window.grecaptcha) {
-                grecaptcha.reset(); //two recapthca on same page creates conflicts
-            }
+           
             if (window.hcaptcha) {
                 hcaptcha.reset(); //two recapthca on same page creates conflicts
             }
