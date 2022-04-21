@@ -10,7 +10,7 @@
 		<ul class="ff_setting_menu">
 			<?php foreach ($menu_items as $menu_index => $menu_item): ?>
 				<li class="<?php if ($route == $menu_item['slug']) echo "active"; ?>">
-                    <a href="<?php echo esc_url($menu_item['url']); ?><?php if (isset($menu_item['hash'])) echo "#{". esc_attr($menu_item['hash']) ."}"; ?>">
+                    <a href="<?php echo esc_url($menu_item['url']); ?><?php if (isset($menu_item['hash'])) echo "#". esc_attr($menu_item['hash']); ?>">
                         <?php echo esc_html($menu_item['title']); ?>
                     </a>
                 </li>
