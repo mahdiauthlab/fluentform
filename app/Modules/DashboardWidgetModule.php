@@ -40,8 +40,8 @@ class DashboardWidgetModule
             <?php foreach ($stats as $stat): ?>
                 <li>
                     <a href="<?php echo admin_url('admin.php?page=fluent_forms&route=entries&form_id=' . $stat->form_id); ?>">
-                        <?php echo $stat->title; ?>
-                        <span class="ff_total"><?php echo $stat->unreadCount; ?>/<?php echo $stat->total; ?></span>
+                        <?php echo esc_html($stat->title); ?>
+                        <span class="ff_total"><?php echo esc_attr($stat->unreadCount); ?>/<?php echo esc_attr($stat->total); ?></span>
                     </a>
                 </li>
             <?php endforeach; ?>

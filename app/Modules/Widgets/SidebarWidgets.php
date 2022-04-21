@@ -48,9 +48,9 @@ class SidebarWidgets extends \WP_Widget
         // Widget admin form
         ?>
         <p>
-            <label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title (optional):'); ?></label>
-            <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>"
-                   name="<?php echo $this->get_field_name('title'); ?>" type="text"
+            <label for="<?php echo esc_attr($this->get_field_id('title')); ?>"><?php _e('Title (optional):'); ?></label>
+            <input class="widefat" id="<?php echo esc_attr($this->get_field_id('title')); ?>"
+                   name="<?php echo esc_attr($this->get_field_name('title')); ?>" type="text"
                    value="<?php echo esc_attr($title); ?>"/>
         </p>
         <?php
@@ -60,17 +60,17 @@ class SidebarWidgets extends \WP_Widget
             ->get();
         ?>
         
-        <label for="<?php echo $this->get_field_id('allforms'); ?>">Select a form:
-            <select style="margin-bottom: 12px;" class='widefat' id="<?php echo $this->get_field_id('allforms'); ?>"
-                    name="<?php echo $this->get_field_name('allforms'); ?>" type="text"
+        <label for="<?php echo esc_attr($this->get_field_id('allforms')); ?>">Select a form:
+            <select style="margin-bottom: 12px;" class='widefat' id="<?php echo esc_attr($this->get_field_id('allforms')); ?>"
+                    name="<?php echo esc_attr($this->get_field_name('allforms')); ?>" type="text"
             >
                 <?php
                 foreach ($forms as $item) {
                     ?>
                     <option <?php if ($item->id == $selectedForm) {
                         echo 'selected';
-                    } ?> value='<?php echo $item->id; ?>'>
-                        <?php echo $item->title; ?> (<?php echo $item->id; ?>)
+                    } ?> value='<?php echo esc_attr($item->id); ?>'>
+                        <?php echo esc_html($item->title); ?> (<?php echo esc_attr($item->id); ?>)
                     </option>
                     <?php
                 }

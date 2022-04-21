@@ -231,3 +231,11 @@ function fluentFormGetRandomPhoto()
 
     return fluentformMix('img/conversational/' . $photoName);
 }
+
+/**
+ * Print internal content (not user input) without escaping.
+ */
+function fluentFormPrintUnescapedInternalString($string)
+{
+    echo $string; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+}
