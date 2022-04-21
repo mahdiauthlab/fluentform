@@ -123,9 +123,9 @@ class DateTime extends BaseComponent
                             return;
                         }
                         flatpickr.localize(window.fluentFormVars.date_i18n);
-                        var config = <?php echo fluentFormPrintUnescapedInternalString($config); ?>;
+                        var config = <?php fluentFormPrintUnescapedInternalString($config); ?>;
                         try {
-                            var customConfig = <?php echo fluentFormPrintUnescapedInternalString($customConfigObject); ?>;
+                            var customConfig = <?php fluentFormPrintUnescapedInternalString($customConfigObject); ?>;
                         } catch (e) {
                             var customConfig = {};
                         }

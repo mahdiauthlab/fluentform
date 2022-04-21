@@ -21,18 +21,18 @@ class SidebarWidgets extends \WP_Widget
             return;
         }
 
-        echo $args['before_widget'];
+        echo $args['before_widget']; // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped
 
         if ( ! empty( $instance['title'] ) ) {
-            echo $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ) . $args['after_title'];
+            echo $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ) . $args['after_title']; // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped
         }
 
         if ($selectedForm != '') {
             $shortcode = "[fluentform id='$selectedForm']";
-            echo do_shortcode($shortcode);
+            echo do_shortcode($shortcode); // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped
         }
 
-        echo $args['after_widget'];
+        echo $args['after_widget']; // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped
 
     }
 
@@ -48,7 +48,7 @@ class SidebarWidgets extends \WP_Widget
         // Widget admin form
         ?>
         <p>
-            <label for="<?php echo esc_attr($this->get_field_id('title')); ?>"><?php _e('Title (optional):'); ?></label>
+            <label for="<?php echo esc_attr($this->get_field_id('title')); ?>"><?php _e('Title (optional):', 'fluentform'); ?></label>
             <input class="widefat" id="<?php echo esc_attr($this->get_field_id('title')); ?>"
                    name="<?php echo esc_attr($this->get_field_name('title')); ?>" type="text"
                    value="<?php echo esc_attr($title); ?>"/>

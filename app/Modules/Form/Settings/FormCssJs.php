@@ -105,7 +105,7 @@ class FormCssJs
                         var formId = "<?php echo esc_attr($formId); ?>";
                         var $ = jQuery;
                         try {
-                            <?php echo fluentFormPrintUnescapedInternalString($customJS); ?>
+                            <?php fluentFormPrintUnescapedInternalString($customJS); ?>
                         } catch (e) {
                             console.warn('Error in custom JS of Fluentform ID: ' + $form.data('form_id'));
                             console.error(e);

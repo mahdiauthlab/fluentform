@@ -111,7 +111,7 @@ class FormBuilder
             true
         );
         
-        echo fluentFormPrintUnescapedInternalString($formBody);
+        fluentFormPrintUnescapedInternalString($formBody);
         
         echo "</form><div id='fluentform_" . $form->id . "_errors' class='ff-errors-in-stack ";
 
