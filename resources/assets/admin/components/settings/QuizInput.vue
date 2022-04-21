@@ -8,7 +8,7 @@
         </div>
         <transition name="slide-down">
             <div v-if="input.enabled == true" class="quiz-field">
-                <div class="quiz-field-setting" style="width: 20%">
+                <div class="quiz-field-setting" >
                     {{ $t('Score') }}
                     <el-input-number   size="small" v-model="input.points" controls-position="right" :min="1" :max="100"></el-input-number>
                   
