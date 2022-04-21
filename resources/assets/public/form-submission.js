@@ -761,17 +761,11 @@ jQuery(document).ready(function () {
                         $popContent.css('max-width', formWidth);
 
                         const iconLeft = $(this).offset().left;
-                        const formLeft = $theForm.offset().left;
                         const contentWidth = $popContent.outerWidth();
                         const contentHeight = $popContent.outerHeight();
 
                         let tipPosition = iconLeft - (contentWidth / 2) + 10;
 
-                        if ((tipPosition + contentWidth) > formWidth) {
-                            tipPosition = (formLeft + formWidth) / 2;
-                        } else if (tipPosition < formLeft) {
-                            tipPosition = formLeft;
-                        }
 
                         $popContent.css('top', $(this).offset().top - contentHeight - 5);
                         $popContent.css('left', tipPosition);
