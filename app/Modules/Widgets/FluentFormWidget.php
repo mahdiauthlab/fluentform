@@ -53,7 +53,7 @@ class FluentFormWidget extends Widget_Base {
         return [ 'fluentform-elementor'];
     }
 
-    protected function _register_controls()
+    protected function register_controls()
     {
         $this->register_general_controls();
         $this->register_error_controls();
@@ -2465,6 +2465,6 @@ class FluentFormWidget extends Widget_Base {
      *
      * @access protected
      */
-    protected function _content_template() {}
+    protected function content_template() {}
 
 }
