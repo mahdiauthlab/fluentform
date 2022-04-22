@@ -9,6 +9,7 @@ use Elementor\Group_Control_Typography;
 use \Elementor\Core\Schemes\Typography as Scheme_Typography;
 use Elementor\Group_Control_Background;
 use \Elementor\Core\Schemes\Color as Scheme_Color;
+use FluentForm\App\Helpers\Helper;
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
@@ -89,7 +90,7 @@ class FluentFormWidget extends Widget_Base {
                 'label' => esc_html__('Fluent Forms', 'fluentform'),
                 'type' => Controls_Manager::SELECT,
                 'label_block' => true,
-                'options' => ElementorWidget::getForms(),
+                'options' => Helper::getForms(),
                 'default' => '0',
             ]
         );
