@@ -232,7 +232,7 @@ function fluentFormGetRandomPhoto()
     return fluentformMix('img/conversational/' . $photoName);
 }
 
-if ( ! function_exists('fluentFormRender')) {
+if (! function_exists('fluentFormRender')) {
     function fluentFormRender($atts)
     {
         $shortcodeDefaults = array(
@@ -247,4 +247,12 @@ if ( ! function_exists('fluentFormRender')) {
 
         return (new \FluentForm\App\Modules\Component\Component(wpFluentForm()))->renderForm($atts);
     }
+}
+
+/**
+ * Print internal content (not user input) without escaping.
+ */
+function fluentFormPrintUnescapedInternalString($string)
+{
+    echo $string; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 }
