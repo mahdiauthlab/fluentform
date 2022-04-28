@@ -186,6 +186,11 @@ class ShortCodeParser
             );
         }
 
+        // make every number field shortcode value with format
+        if ( $field['element'] === 'input_number') {
+            $isHtml = true;
+        }
+
         return static::$store['inputs'][$key] = apply_filters(
             'fluentform_response_render_' . $field['element'],
             static::$store['inputs'][$key],
